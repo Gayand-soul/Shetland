@@ -1,0 +1,402 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+}
+body{
+    background-color: #c6c8ca;
+}
+
+@font-face {
+    font-family: 'Charm';
+    src: url(../fonts/Charm-Bold.ttf) format("truetype"), url(../fonts/Charm-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {   /*....Cormora tror jag ok....*/
+    font-family: 'CormorantUpright';
+    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*.NAVBAR STARTS HERE!!...............................................................*/
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image:url(../images/FrozenSea1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/*..FLAGS IN  the NAVBAR STARTS....................*/
+.flag-container{
+    text-align: right;
+    margin-bottom: 10px;
+
+}
+.flag-container a{
+    margin: 0 10px;
+    display: inline-block;
+
+}
+.flag-container img{
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.flag-container img{
+    display: block;
+    margin-top: 10px;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+    object-fit: cover;
+}
+/*..FLAGS ENDS HERE...................*/
+
+nav{
+    display:flex;
+    padding:2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /*....NY: FÖR HamburgerMenu.*/
+    z-index: 20;       /*....NY.FÖR HamburgerMenu.*..*/
+}
+
+.nav-links{     /*....HOME,ABOUT justeras...*/
+    flex:1;
+    text-align: center;   /*....HOME,ABOUT hela raden justeras till mitten av websidan..*/
+
+}
+.nav-links ul li{ 
+    font-family: 'CormorantUpright';
+    font-weight:lighter;
+    font-style: normal;
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{     /*....HOME,ABOUT font justeras...*/
+    color: darkblue;     /*font färg för HOME, ABOUT #043308;*/
+    text-decoration: none;
+    font-size: 40px;     
+
+}
+.nav-links ul li::after{   /*....HOME,ABOUT får en understreck...*/
+    content: '';
+    width: 0%;      /*..understreck är gömd (=därför 0%) om man vill visa den öka med 100%....*/
+    height: 2px;
+    background: #971006;  /*....HOME,ABOUT får en understreck färg.#971006..*/
+    display: block;
+    margin: auto;
+    transition: 0.9s;  /*..understreck ritas med 0.9s tidsintervall. ju > tal desto långsammare ritas linjen..*/
+}
+.nav-links ul li:hover::after{    /*..understreck blir synlig om man hover över den....*/
+    width: 100%;       
+}
+
+/*..hamburgermenu.......*/
+.checkbtn {  
+    font-size: 50px;
+    color: rgb(4, 12, 98);
+    float: right;
+    line-height: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+/*..Mediaquery för NAVBAR.*/
+
+@media (max-width:1108px){
+    .nav-links ul li a {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    .nav-links ul {
+        position: fixed;
+        width: 100%;
+        height: 70vh;
+        background: #2c3e50;/* whole page with blue color.*/
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition:all .5s;
+    }
+    .nav-links ul li{
+        display: block;/* nav bar becomes a block.*/
+        margin: 30px 0; /* original = 50px 0;.*/
+        line-height: 10px;
+    }
+    .nav-links ul li a{
+        font-size: 25px;
+        color: gold;/* nav bar changes the color.*/
+    }
+    .nav-links ul li:hover::after{    /*..understreck blir synlig när man rör vid menyn....*/
+        margin-top: 8px;
+        width: 30%; 
+        transition: width 0.5s ease-in-out;      
+    }
+   
+    #check:checked ~ .nav-links ul { /* click '3lines'on the nav bar appears.*/
+        left:0;  /* nav bar displays from left side to middle.*/
+    }
+}
+
+
+/* Smallimg med snö animering.*/
+#Smallimg, #cnv {
+    margin-top: 50px;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    left: 50%;  /*.Flyttar elementets övre vänstra hörn till 50% från vänsterkanten
+                och 50% från toppen av dess referensförälders bredd och höjd.
+            Detta placerar elementet nära mitten av dess container...*/
+    top: 50%;
+    transform: translate(-50%, -50%);/*.translateX(-50%) och translateY(50%)..*/
+    box-shadow:0 0 100px #d5e6f7fb; /*.alt2: grå skugga: 0 50px 30px 50px rgba(36, 36, 36, 0.2)*/
+}
+
+/*....WElcome text container.............*/
+.welcome-container{
+    display: flex;
+    flex-direction: row;/*..för horisontell layout(original = column)*/
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ededee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}  
+.welcome-container .content{
+    flex: 2; /*.texten får mer plats än image..*/
+    margin-right: 20px;
+}
+.welcome-container .image-ylvaeddie{
+    flex:1;/*.texten får mer plats än image..*/
+}
+.welcome-container .image-ylvaeddie img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+.welcome-container .title{  
+    width: 100%;
+    text-align: center;
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight:lighter;
+    font-style:normal;  /*.Blev bättre nu! Behåll!.*/
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #05224b;
+}
+.welcome-container .welcome-text{
+    margin: 0 0 10px 0;
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight: lighter;
+    font-style:normal;  /*.Blev bättre nu! Behåll!.*/
+    font-size: 23px;
+    line-height: 1.6;
+    color: #696767; 
+}
+
+/*....CITAT DEL container............................*/
+.citat-container{
+    display: flex;
+    flex-direction: row;/*..för horisontell layout(original = column)*/
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4f6166;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    overflow: auto; /*--den gör att innehåll inte överlappar.. vid mindre skärm.*/
+}
+.citat-content h3{
+    font-family:'Charm'; /* En webbsäker font */
+    font-size: 36px;
+    color: #5d0202;
+    margin-bottom: 10px;
+}
+.citat-content h4{
+    font-family: 'Charm', cursive;
+    font-size: 24px;
+    font-weight: normal;
+    color: gold;
+}
+.image-citat img{
+    width: 200px;
+    height: auto;/* Måste ändras..original=100px....! */
+    object-fit: cover;
+    margin-top: 10px;/* Måste ändras......! */
+    margin-right: 50px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/*...SENASTE NYHETS DEL:= container-Senaste nytt......................*/
+.SenasteNytt-container{
+    width: 100%;
+    height: 1050px;
+    background: linear-gradient(rgba(128,128,128,0.9), rgba(0,128,128,0.6)), url(../images/Hav13.JPG);/*..original= rgba(0,0,0,0.4)....*/
+    display: flex;
+    flex-direction: row;/*..för horisontell layout(original = column)*/
+    align-items:center;  /*..TESTAS....*/
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.SenasteNytt-container .senastenytt-content{
+    margin-right: 25px;
+    
+}
+.senastenytt-content h3{
+    margin-top: 30px;
+    font-family:'CormorantUpright'; 
+    font-weight:lighter;
+    font-style:normal;
+    font-size: 38px;
+    color:  #dcd9d9; 
+    
+}
+
+.SenasteNytt-container  h5{
+    margin: 0 0 1px 0;
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight: lighter;
+    font-style:normal;  /*.Blev bättre nu! Behåll!.*/
+    font-size: 29px;
+    line-height: 1.6;
+    color: #dcd9d9; 
+}
+.senastenytt-text{
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight: normal;
+    font-style:normal; 
+    font-size: 21px; 
+    color: #dcd9d9; 
+    
+}
+/*..Media qiery för Nyhets-container-----------------*/
+@media(max-width:768px){
+    .SenasteNytt-container{
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+}
+@media(max-width:480px){    /*..NÖJD..*/
+    .SenasteNytt-container{
+        height: auto;
+        flex-direction: column;
+        padding: 5px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+}
+
+/*.VIDEO CONTAINER MED VIDEO.....................................*/
+.video-container{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items:center;  
+    justify-content: center;
+    border-radius: 8px;
+    background-color: #4f6166;
+    padding: 20px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    gap: 20px;
+}
+.video-container video{
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+.video-container h3{
+    margin-top: 10px;
+    font-family:'CormorantUpright'; 
+    font-weight: lighter;
+    font-style:normal;
+    font-size: 30px;
+    color:  #dcd9d9; 
+
+}
+
+/*.Meida för VIDEO.....................................*/
+@media (max-width:768px){ /*..för mindre skärm= Tablet..*/
+    .video-container{
+        flex-direction: column; /*..video visas en efter en*/
+        height: auto; /*..justera video lämplig höjd*/
+    }
+    .video-container video{
+        width: 100%; /* visar fullwidth för varje video*/
+        height: auto;
+    }
+
+}
+@media (max-width:480px){
+    .video-container{
+        flex-direction: column;
+        height: auto;
+    }
+    .video-container video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*  FOOTER SECTION...............*/
+footer{
+    width: 100%;
+    background-color: #171a43;
+    color:  #dcd9d9; 
+    text-align: center;
+    padding: 20px 0;
+}
+footer a{
+    color: #dcd9d9; 
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover{
+    text-decoration: underline;
+}

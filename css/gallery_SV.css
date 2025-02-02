@@ -1,0 +1,583 @@
+
+*{
+    box-sizing: border-box;
+}
+html, body {
+    place-items: center;
+    background: #778c8cf9; /* Samma background som Workshop;*/
+}
+
+@font-face {   /*....Cormora tror jag ok....*/
+    font-family: 'CormorantUpright';
+    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*..FLAGS IN NAVBAR.....................*/
+.flag-container{
+    text-align: right;
+    margin-bottom: 10px;
+
+}
+.flag-container a{
+    margin: 0 10px;
+    display: inline-block;
+
+}
+
+.flag-container img{
+    display: block;
+    margin-top: 10px;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+    object-fit: cover;
+}
+
+/*..FLAGS IN NAVBAR ENDS HERE...................*/
+
+/*.NAVBAR STARTS HERE!!...............................................................*/
+nav{
+    display:flex;
+    padding:2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{     /*....Navbar justeras...*/
+    flex:1;
+    text-align: center;   
+
+}
+.nav-links ul li{ 
+    font-family: 'CormorantUpright';
+    font-weight:lighter;
+    font-style: normal;
+    list-style: none;
+    display: inline-block;
+    padding:8px 12px;
+    position: relative;
+}
+.nav-links ul li a{     /*....HOME,ABOUT font justeras...*/
+    color: darkblue;     /*font färg för HOME, ABOUT #043308;*/
+    text-decoration: none;
+    font-size: 40px;     
+
+}
+.nav-links ul li::after{   /*....HOME,ABOUT får en understreck...*/
+    content: '';
+    width: 0%;      /*..understreck är gömd (=därför 0%) om man vill visa den öka med 100%....*/
+    height: 2px;
+    background: #971006;  /*....HOME,ABOUT får en understreck färg.#971006..*/
+    display: block;
+    margin: auto;
+    transition: 0.9s;  /*..understreck ritas med 0.9s tidsintervall. ju > tal desto långsammare ritas linjen..*/
+}
+.nav-links ul li:hover::after{    /*..understreck blir synlig om man hover över den....*/
+    width: 100%;       
+}
+
+/*.Hamburgermeny=3st streck för navbar..*/
+.checkbtn {  
+    font-size: 50px;
+    color: rgb(11, 29, 221);
+    float: right;
+    line-height: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+/*.MEDIA QIERY NAVBAR......*/
+
+@media (max-width:1108px){
+    .nav-links ul li a {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    .nav-links ul {
+        position: fixed;
+        width: 100%;
+        height: 70vh;
+        background: #2c3e50;/* whole page with blue color.*/
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition:all .5s;
+        z-index: 10; /* navbar visas ovanför/framför Gallery*/
+    }
+    .nav-links ul li{
+        display: block;/* nav bar becomes a block.*/
+        margin: 30px 0; /* original = 50px 0;.*/
+        line-height: 10px;
+    }
+    .nav-links ul li a{
+        font-size: 25px;
+        color: gold;/* nav bar changes the color.*/
+    }
+    .nav-links ul li:hover::after{    /*..understreck blir synlig när man rör vid menyn....*/
+        margin-top: 8px;
+        width: 30%; 
+        transition: width 0.5s ease-in-out;      
+    }
+   
+    #check:checked ~ .nav-links ul { /* click '3lines'on the nav bar appears.*/
+        left:0;  /* nav bar displays from left side to middle.*/
+    }
+}
+
+/* "Lidingö" SLIDE SHOW BEGINS HERE. .........................................*/
+/*..Slideshow container*/
+.slideshow-container1{
+    max-width: 1300px;
+    position: relative;
+    margin: auto;
+    height: 500px; /*..new height origin=50vh*/
+    border: 3px solid #ede6d6;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.2);
+    z-index: 1; /* container visas bakom navbar.*/
+    
+}
+/* 2 black and white slides*/
+.mySlides{
+    display: none;
+    height: 100%;  /*..Ny ändring: justera bildhöjden för att fylla slidern*/
+    
+}
+.mySlides img{
+    width: 100%;
+    height: 100%; /* Ny ändring: Anpassa bildhöjden till containern */
+    object-fit: cover; /* Ny ändring: Behåll bildproportioner */
+    position: absolute;
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;            
+    width: auto;
+    margin-top: -12px; /* ursprung= -22 px */
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(2, 31, 53, 0.8);
+    opacity: 0.8;
+}
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    /*padding: 8px 4px;*/
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    max-width: 100%; /* Lägg till denna rad */
+    text-align: center;
+    overflow: hidden; /* Lägg till denna rad */
+}
+ /* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+       /* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #a4d4ec;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #051087;
+}
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Ny ändring: skapa avstånd under navbar */
+.slideshow-container {
+    margin-top: 60px; /* justera detta värde beroende på höjden av navbar!!Glöm ej!!! */
+}
+/* Media queries for larger screens */
+@media (min-width: 1200px) {
+     .slideshow-container {
+         height: 60vh; /* justeras höjden för större skärmar */ 
+        
+} 
+    .mySlides img { 
+    height: 100%; /* justeras bildhöjden för större skärmar */ 
+    width: 100%;
+    object-fit: cover;
+} 
+}
+@media (min-width:768px) and (max-width:1199px){
+    .slideshow-container{
+        height: 50vh;
+    }
+    .mySlides img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+@media (max-width:767px){
+    .slideshow-container1 {
+        height: 40vh; /* Anpassa höjden för små skärmar */
+    }
+
+    .mySlides img {
+        height: 100%; /* Bilden ska fylla hela containern */
+        width: 100%;  /* Bilden ska vara lika bred som containern */
+        object-fit: cover; /* Bevarar bildproportionerna utan att förlora något */
+    }
+}
+
+/* BLACK AND WHITE SLIDE SHOW BEGINS HERE...............................*/
+
+.container {
+    display: flex;
+    gap: 50px; /* Gap between 2 .wrapper */
+    margin-bottom: 100px; /* Distance to slide-container2 */
+    justify-content: center;
+    margin: 30px auto;/*..distance from slideshow above and other content*/
+    z-index: 1; /* container visas bakom navbar.*/
+}
+
+.h4-text{
+    margin-top: 20px;
+    font-family:'CormorantUpright'; 
+    font-weight:lighter;
+    font-style:normal;
+    font-size: 20px;
+    color:  #dcd9d9; 
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/*.FIRST BLACK N WHITE SHOW= statues in "Millersgården"......*/
+.wrapper {
+    margin-top: 65px;  /* Distance from slide-container1 */
+    position: relative;
+    height: 790px;
+    width: 460px;
+    overflow: hidden;
+    background: #fff; /* white background to look like a picture */
+    border: 7px solid #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1; /* container visas bakom navbar.*/
+}
+.wrapper .images{
+    height: 100%;
+    width: 100%;
+    display: flex; /*-FLEX FLEX!!!!--'*/
+   
+}
+.wrapper .images .img-1{
+    height: 100%;
+    width: 100%;
+    background: url(../images/staty-color.JPG) no-repeat;/*.color picture!....*/
+}
+.wrapper .images .img-2{
+    position: absolute;
+    height: 100%;
+    width: 50%;  /*.halva bilden visas i svartvit/halva visas i color..*/
+    filter: blur(0.5px); /*..lite suddig effect..*/
+    background: url(../images/staty-black.JPG) no-repeat;/*.blacknwhite picture!....*/
+}
+.wrapper .slider{
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: 99;
+}
+.wrapper .slider input{
+    width: 100%;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+.slider input::-webkit-slider-thumb{ /*..en linje i mitten av bilden..*/
+    height: 789px;
+    width: 3px;
+    background: none;
+    -webkit-appearance: none;
+    cursor: col-resize;
+}
+.slider .drag-line{
+    width: 3px;
+    height: 789px;
+    position: absolute;
+    left: 49.85%;
+    pointer-events: none;
+}
+.slider .drag-line::before,
+.slider .drag-line::after{  /*halva linjen är röd;*/
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 395px; /*...original= 222px*/
+    background: rgb(241, 236, 236);
+
+}
+.slider .drag-line::before{
+    top: 0;
+}
+.slider .drag-line::after{ /*en linje är röd, andra linje = vit, kunde göra isär linjerna;*/
+    bottom:0;
+}
+.slider .drag-line span{
+    height: 42px;
+    width: 42px;
+    border: 3px solid #840404;
+    position: absolute;
+    top: 50%;           /*.rutan sänks ned till halva höjden...*/
+    left: 50%;
+    border-radius: 50%;  /*.rutan blir cirkel!...*/
+    transform: translate(-50%, -50%); /*..man kunde göra isär röda, vita linjerna..*/
+}
+.slider .drag-line span::before,
+.slider .drag-line span::after{
+    position: absolute;
+    content: "";
+    top:50%;
+    border: 10px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+.slider .drag-line span::before{ 
+    left: 40%;
+    border-left-color: #840404;
+}
+.slider .drag-line span::after{
+    left: 60%;
+    border-top-color: #840404;
+}
+/*.2ND BLACK N WHITE SLIDE SHOW   starts down here...................*/
+
+.wrapper0 {
+    margin-top: 160px; /*.Distance from slide show that is located before..*/
+    position: relative;
+    height: 630px;
+    width: 750px;
+    overflow: hidden;
+    background: #fff; /* white background to look like a picture */
+    border: 7px solid #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+.wrapper0 .images0{
+    height: 100%;
+    width: 100%;
+    display: flex; /*-FLEX FLEX!!!!--'*/
+   
+}
+.wrapper0 .images0 .img-10{
+    height: 100%;
+    width: 100%;
+    background: url(../images/Woman-color.JPG) no-repeat;/*.color picture!....*/
+}
+.wrapper0 .images0 .img-20{
+    position: absolute;
+    height: 100%;
+    width: 50%;  /*.halva bilden visas i svartvit/halva visas i color..*/
+    filter: blur(0.5px); /*..lite suddig effect..*/
+    background: url(../images/Woman-black.JPG) no-repeat;/*.blacknwhite picture!....*/
+}
+.wrapper0 .slider0{
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: 99;
+}
+.wrapper0 .slider0 input{
+    width: 100%;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+.slider0 input::-webkit-slider0-thumb{ /*..en linje i mitten av bilden..*/
+    height: 789px;
+    width: 3px;
+    background: none;
+    -webkit-appearance: none;
+    cursor: col-resize;
+}
+.slider0 .drag-line0{
+    width: 3px;
+    height: 789px;
+    position: absolute;
+    left: 49.85%;
+    pointer-events: none;
+}
+.slider0 .drag-line0::before,
+.slider0 .drag-line0::after{  /*halva linjen är röd;*/
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 395px; /*...original= 222px*/
+    background: rgb(241, 236, 236);
+
+}
+.slider0 .drag-line0::before{
+    top: 0;
+}
+.slider0 .drag-line0::after{ /*en linje är röd, andra linje = vit, kunde göra isär linjerna;*/
+    bottom:0;
+}
+.slider0 .drag-line0 span{
+    height: 42px;
+    width: 42px;
+    border: 3px solid #840404; /*halva linjen är röd;*/
+    position: absolute;
+    top: 50%;           /*.rutan sänks ned till halva höjden...*/
+    left: 50%;
+    border-radius: 50%;  /*.rutan blir cirkel!...*/
+    transform: translate(-50%, -50%); /*..man kunde göra isär röda, vita linjerna..*/
+}
+.slider0 .drag-line0 span::before,
+.slider0 .drag-line0 span::after{
+    position: absolute;
+    content: "";
+    top:50%;
+    border: 10px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+.slider0 .drag-line0 span::before{ 
+    left: 40%;
+    border-left-color: #840404;
+}
+.slider0 .drag-line0 span::after{
+    left: 60%;
+    border-top-color: #840404;
+}
+/* MEDIA FÖR BLACK AND WHITE SLIDES..............*/
+@media (max-width:768px){   /*..Tablet storlek. och mindre.*/
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wrapper, .wrapper0{
+      width: 90%;
+      margin-top: 20px;
+    }
+}
+/* BLACK AND WHITE SLIDE SHOW ENDS HERE...............................*/
+
+/*.Shetland SLIDE SHOW STARTS HERE...........................................*/
+.slideshow-title {
+    text-align: center;
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight:lighter;
+    font-style:normal;  /*.Blev bättre nu! Behåll!.*/
+    font-size: 34px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    color: #eff1f4;
+    
+}
+.slideshow-books {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 20px 0 100px; /* Övre, vänster-höger och nedre marginal =margin: 100px 0 100px*/
+    padding: 0 20px; /* Ger lite utrymme på vänster och höger sida */
+    overflow-x: auto;
+}
+
+
+.slideshow-books img{
+    height: 250px;
+    width: 308px;
+    flex-shrink: 0; /*.avoid shrink for sure!..*/
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin-bottom: 18px;/*.gap between pics and scrollbar..*/
+}
+
+/*.scrollbar installations under the pics..*/
+.slideshow-books::-webkit-scrollbar{
+    height: 10px;
+}
+.slideshow-books::-webkit-scrollbar-thumb{
+    background-color: #888;
+    border-radius: 18px;
+}
+.slideshow-books::-webkit-scrollbar-thumb:hover{
+    background-color: #555;
+}
+
+/* Responsiv design for Books slideshow*/
+@media (max-width:768px){
+    .slideshow-books img {
+        height: 180px;
+        width: 252px;
+    }
+}
+@media(max-width: 480px){
+    .slideshow-books img {
+        height: 150px;
+        width: 210px;
+    }
+}
+
+
+/*  FOOTER SECTION...............*/
+footer{
+    width: 100%;
+    background-color: #171a43;
+    color:  #dcd9d9; 
+    text-align: center;
+    padding: 20px 0;
+}
+footer a{
+    color: #dcd9d9; 
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover{
+    text-decoration: underline;
+}

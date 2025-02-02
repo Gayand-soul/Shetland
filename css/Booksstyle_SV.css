@@ -1,0 +1,342 @@
+
+body{
+    
+    background-color: #b0abab;
+}
+
+@font-face {   /*....Cormora tror jag ok....*/
+    font-family: 'CormorantUpright';
+    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*..FLAGS IN NAVBAR.....................*/
+.flag-container{
+    text-align: right;
+    margin-bottom: 10px;
+
+}
+.flag-container a{
+    margin: 0 10px;
+    display: inline-block;
+
+}
+
+.flag-container img{
+    display: block;
+    margin-top: 10px;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+    object-fit: cover;
+}
+/*..FLAGS IN NAVBAR ENDS HERE...................*/
+
+/*.NAVBAR STARTS HERE!!...............................................................*/
+nav{
+    display:flex;
+    padding:2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{     /*....Navbar justeras...*/
+    flex:1;
+    text-align: center;   
+
+}
+.nav-links ul li{ 
+    font-family: 'CormorantUpright';
+    font-weight:lighter;
+    font-style: normal;
+    list-style: none;
+    display: inline-block;
+    padding:8px 12px;
+    position: relative;
+}
+.nav-links ul li a{     /*....HOME,ABOUT font justeras...*/
+    color: darkblue;     /*font färg för HOME, ABOUT #043308;*/
+    text-decoration: none;
+    font-size: 40px;     
+
+}
+.nav-links ul li::after{   /*....HOME,ABOUT får en understreck...*/
+    content: '';
+    width: 0%;      /*..understreck är gömd (=därför 0%) om man vill visa den öka med 100%....*/
+    height: 2px;
+    background: #971006;  /*....HOME,ABOUT får en understreck färg.#971006..*/
+    display: block;
+    margin: auto;
+    transition: 0.9s;  /*..understreck ritas med 0.9s tidsintervall. ju > tal desto långsammare ritas linjen..*/
+}
+.nav-links ul li:hover::after{    /*..understreck blir synlig om man hover över den....*/
+    width: 100%;       
+}
+
+/*--Hamburgermenu = 3st streck för Navbar............-*/
+.checkbtn {  
+    font-size: 50px;
+    color: rgb(11, 29, 221);
+    float: right;
+    line-height: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/*Media query för NAVBAR..............*/
+
+@media (max-width:1108px){
+    .nav-links ul li a {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    .nav-links ul {
+        position: fixed;
+        width: 100%;
+        height: 70vh;
+        background: #2c3e50;/* whole page with blue color.*/
+        top: 80px;
+        left:-110%;
+        text-align: center;
+        transition:all .5s;
+    }
+    .nav-links ul li{
+        display: block;/* nav bar becomes a block.*/
+        margin: 30px 0; /* original = 50px 0;.*/
+        line-height: 10px;
+    }
+    .nav-links ul li a{
+        font-size: 25px;
+        color: gold;/* nav bar changes the color.*/
+    }
+    .nav-links ul li:hover::after{    /*..understreck blir synlig när man rör vid menyn....*/
+        margin-top: 8px;
+        width: 30%; 
+        transition: width 0.5s ease-in-out;      
+    }
+   
+    #check:checked ~ .nav-links ul { /* click '3lines'on the nav bar appears.*/
+        left:0;  /* nav bar displays from left side to middle.*/
+    }
+}
+
+/* Container för böcker */
+.book-container {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    margin-top: 100px; /* För att ge utrymme ovanför varje bokcontainer */
+    margin-bottom: 60px; /* Margin mellan Book1 och Book2 */
+    border: 1px solid #ccc; /* För synlighet */
+    box-sizing: border-box;
+}
+.book-container h2{
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight: lighter;
+    font-style:normal;  /*.Blev bättre nu! Behåll!.*/
+    font-size: 29px;
+    line-height: 1.6;
+    color: #f8f4f4; 
+
+}
+.book-container p{
+    font-family:'CormorantUpright'; /* hämtades från @font-face, cool!*/
+    font-weight: lighter;
+    font-style:normal;  /*.Blev bättre nu! Behåll!.*/
+    color: #f8f4f4; 
+    font-size: 24px;
+
+}
+
+/* Vänstra child (text) */
+.left-child {
+    flex: 1; /*  tar upp lika stor plats */
+    padding: 20px;
+    box-sizing: border-box; /* För att säkerställa att padding inte påverkar bredden */
+    overflow-wrap: break-word; /* Förhindrar att långa ord inte bryts och hoppar utanför */
+    word-wrap: break-word;/* Kompletterar overflow-wrap för äldre webbläsare */
+    max-height: 100%; /* Säkerställer att texten inte växer utanför höjden på container */
+    overflow-y: auto; /* Gör så att texten scrollar om den är för lång */
+}
+/* Anpassning av scrollbarens utseende */
+.left-child::-webkit-scrollbar {
+    width: 8px; /* Bredd på scrollbar */
+}
+
+.left-child::-webkit-scrollbar-track {
+    background: #1d0477; /* Färgen på bakgrunden av scrollspåret */
+}
+
+.left-child::-webkit-scrollbar-thumb {
+    background: #fdfdfd; /* Färgen på själva scrollhantaget, gör den svagare */
+    border-radius: 10px; /* Ger scrollhantaget rundade hörn */
+}
+
+.left-child::-webkit-scrollbar-thumb:hover {
+    background:#fdfdfd; /* När användaren håller muspekaren på scrollhantaget, gör den lite mörkare */
+}
+/* Högra child (bild) */
+.right-child {
+    flex: 2; /* Gör så att den högra delen tar upp mer plats än vänstra */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/*.för att anpass varje bild..*/
+.right-child img {
+    max-width: 100%; /* För att göra bilden responsiv */
+    height: auto;
+    object-fit: cover;
+    margin:0 5px; /*margin mellan bilderna*/
+}
+.right-child img:nth-child(1){  /*1:a bilden*/
+    flex: 1;
+    max-width: 30%;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.right-child img:nth-child(2){  /*2:a bilden*/
+    flex: 1;
+    max-width: 30%;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.right-child img:nth-child(3){  /*3:e bilden*/
+    flex: 1;
+    max-width: 30%;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+   
+}
+/* Media query för laptop-storlek */
+@media screen and (max-width: 1024px) {
+    
+    .book-container {
+        flex-direction: column; /* Lägg elementen i kolumn i stället för rad */
+        height: auto; /* Gör att containern kan justera sin höjd beroende på innehållet */
+    }
+
+    /* Justera vänstra och högra child för att passa på mindre skärmar */
+    .left-child {
+        padding: 15px;
+        width: 100%; /* Gör att vänster text tar upp hela bredden */
+        font-size: 14px; /* Minska textstorleken på mindre skärmar */
+    }
+
+    .right-child {
+        width: 100%; /* Gör att bilderna tar upp hela bredden */
+        justify-content: center; /* Justera bilderna till mitten */
+    }
+
+    .right-child img {
+        width: 90%; /* Gör att bilderna anpassar sig till mindre skärm */
+        margin: 10px 0; /* Lägg till margin för att ge utrymme mellan bilder */
+    }
+}
+
+/* Media query för mobil-storlek */
+@media screen and (max-width: 600px) {
+    .book-container {
+        margin-top: 50px; /* Justera marginal för mindre skärmar */
+    }
+
+    .right-child img {
+        width: 100%; /* Gör bilderna ännu större för små skärmar */
+    }
+    .left-child {
+        padding: 10px; /* Minska padding för mobiler för att ge mer utrymme */
+        font-size: 12px; /* Minska textstorleken för mobiler */
+    }
+}
+
+
+/* SLIDE SHOW BOOKS STARTS HERE.........................*/
+.slideshow-title {
+    text-align: center;
+    font-style: 'CormorantUpright';
+    font-size: 34px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    color:  #fff; 
+}
+
+.slideshow-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 20px 0 100px; /* Övre, vänster-höger och nedre marginal =margin: 100px 0 100px*/
+    padding: 0 20px; /* Ger lite utrymme på vänster och höger sida */
+    overflow-x: auto;
+}
+.slideshow-container img {
+    height: 250px;
+    width: 308px;
+    flex-shrink: 0; /* Förhindrar att bilder krymper */
+    border: 1px solid #ccc; /* Optional: Ger en ram runt bilderna */
+    /*border-radius: 10px;*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Ger en liten skugga */
+    margin-bottom: 18px; /*.avståndet mellan bider och scrollbar...*/
+}
+
+.slideshow-container::-webkit-scrollbar {
+    height: 10px;
+   
+}
+
+.slideshow-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 18px;
+}
+
+.slideshow-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+        /* Responsiv design FOR BOOK SLIDE SHOW */
+        @media (max-width: 768px) {
+            .slideshow-container img {
+                height: 180px; /* Minska höjd för mindre skärmar */
+                width: 252px; /* Anpassa bredd proportionellt */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow-container img {
+                height: 150px; /* Ytterligare minskning för små skärmar */
+                width: 210px; /* Anpassa bredd proportionellt */
+            }
+        }
+
+        
+/*  FOOTER SECTION...............*/
+footer{
+    width: 100%;
+    background-color: #171a43;
+    color:  #dcd9d9; 
+    text-align: center;
+    padding: 20px 0;
+}
+footer a{
+    color: #dcd9d9; 
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover{
+    text-decoration: underline;
+}

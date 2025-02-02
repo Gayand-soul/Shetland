@@ -1,0 +1,760 @@
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f1e9bc; 
+}
+@font-face {
+    font-family: 'Charm';
+    src: url(../fonts/Charm-Bold.ttf) format("truetype"), url(../fonts/Charm-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {   /*....Cormora tror jag ok....*/
+    font-family: 'CormorantUpright';
+    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*..FLAGS IN NAVBAR.....................*/
+.flag-container{
+    text-align: right;
+    margin-bottom: 10px;
+
+}
+.flag-container a{
+    margin: 0 10px;
+    display: inline-block;
+
+}
+
+.flag-container img{
+    display: block;
+    margin-top: 10px;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+    object-fit: cover;
+}
+
+/*..FLAGS IN NAVBAR ENDS HERE...................*/
+
+/* NAVBAR - NAVBAR---------------------------*/
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{     /*....Navbar justeras...*/
+    flex: 1;
+    text-align: center;   
+
+}
+.nav-links ul li{ 
+    font-family:'CormorantUpright';
+    font-weight: lighter;
+    font-style: normal;
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{     /*....HOME,ABOUT font justeras...*/
+    color: darkblue;     /*font färg för HOME, ABOUT #043308;*/
+    text-decoration: none;
+    font-size: 40px;     
+
+}
+.nav-links ul li::after{   /*....HOME,ABOUT får en understreck...*/
+    content: '';
+    width: 0%;      /*..understreck är gömd (=därför 0%) om man vill visa den öka med 100%....*/
+    height: 2px;
+    background: #971006;  /*....HOME,ABOUT får en understreck färg.#971006..*/
+    display: block;
+    margin: auto;
+    transition: 0.9s;  /*..understreck ritas med 0.9s tidsintervall. ju > tal desto långsammare ritas linjen..*/
+}
+.nav-links ul li:hover::after{    /*..understreck blir synlig om man hover över den....*/
+    width: 100%;       
+}
+
+ /*..3st streck=hamburgericon för navbar.. ...*/
+ .checkbtn {  
+    font-size: 50px;
+    color: rgb(11, 29, 221);
+    float: right;
+    line-height: 5px;
+    margin-right: 50px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+/*Media query for NAVBAR::::::::::::::*/
+@media (max-width:1108px){
+    .nav-links ul li a {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:858px){
+    .checkbtn{
+        display: block;
+    }
+    .nav-links ul {
+        position: fixed;
+        width: 100%;
+        
+        height: 70vh;
+        background: #2c3e50;/* whole page with blue color.*/
+        top: 80px;
+        left:-110%; /* whole page moves to leftside of the screen.*/
+        text-align: center;
+        transition:all .5s;
+    }
+    .nav-links ul li{
+        display: block;/* nav bar becomes a block.*/
+        margin: 30px 0; /* original = 50px 0;.*/
+        line-height: 10px;
+    }
+    .nav-links ul li a{
+        font-size: 25px;
+        color: gold;/* nav bar changes the color.*/
+    }
+    .nav-links ul li:hover::after{    /*..understreck blir synlig när man rör vid menyn....*/
+        margin-top: 8px;
+        width: 30%; 
+        transition: width 0.5s ease-in-out;      
+    }
+   
+    #check:checked ~ .nav-links ul { /* click '3lines'on the nav bar appears.*/
+        left:0;  /* nav bar displays from left side to middle.*/
+    }
+}
+
+
+/* Container för Verkstad */
+.verkstad-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0; /* För att ge utrymme ovanför varje verk-container */
+    box-sizing: border-box;
+    background-color: #f9f1e9bc;
+    border-radius: 5px;
+}
+/* Ny ändring: Stil för textinnehållet i left-text */
+.text-content {
+    margin-top: -99px; /*margin-top=-99px original */
+    padding: 20px; /* Padding runt texten */
+    overflow-wrap: break-word; 
+    word-wrap: break-word; /* Kompletterar overflow-wrap för äldre webbläsare */
+    overflow-y: auto; /* Scrollar om texten är för lång */
+}
+.text-content p{
+    font-family: 'CormorantUpright';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(102, 101, 101); /* Textfärg */
+
+}
+
+.left-Bild {
+    width: 90%; 
+    height: auto; 
+    margin-top: 5px; /* Skapa avstånd mellan text och bild */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px; 
+    border: 5px solid #7a3c02; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+    box-sizing: border-box; 
+    gap: 10px;
+}
+
+.left-Bild img {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    display: block; 
+    
+}
+.left-text{
+    flex: 1;
+    width: 50%;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Låter text-content och left-Bild staplas vertikalt */
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: none; /* Ingen bakgrundsbild här */
+    font-family: 'CormorantUpright';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(102, 101, 101); /* Textfärg */
+
+}
+/* Högra bilden med 2 fåglar */
+.right-Bild{
+    flex: 2;
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Lägg till en skugga */
+    background-color: white; /* Bakgrundsfärg */
+    overflow: hidden;
+    padding: 10px;
+    border: 5px solid #7a3c02; /* Lägg till en ram som ser ut som en tavelram */
+    box-sizing: border-box;
+}
+.right-Bild img{
+    max-width: 100%; /* För att göra bilden responsiv */
+    height: auto;
+    object-fit: cover;  
+
+}
+
+/* Container nr2 för verkstad ..................................................................*/
+.verkstad-container2{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 100%; 
+    gap: 20px; 
+}
+.left-Bild2{
+    width: 100%; 
+    height: auto; 
+    margin-top: 20px auto; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    background-color: white; 
+    padding: 10px; 
+    border: 5px solid #180907; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+    box-sizing: border-box; 
+   
+}
+.left-Bild2 img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Förbättrad skugga för att ge djup */
+}
+.middle-text{
+    margin-top: -46px;
+    padding: 45px; /* Padding runt texten */
+    font-family: 'CormorantUpright';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(102, 101, 101); 
+    overflow-wrap: break-word; /* Förhindrar att långa ord bryts */
+    word-wrap: break-word; /* Kompletterar overflow-wrap för äldre webbläsare */
+    overflow-y: auto; /* Scrollar om texten är för lång */
+}
+.right-Bild2, .right-Bild21{
+    width: 550px; 
+    height: 298px; /* Anpassa höjden proportionellt för skärm=mycket störreÄNDRA EJ!*/
+    margin-top: 150px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;   
+    overflow: hidden; 
+    background-color: white; 
+    padding: 10px; 
+    border: 5px solid #180907; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+    box-sizing: border-box; 
+   
+    
+}
+.right-Bild2 img, .right-Bild21 img{
+    width: 100%;/* Varje bild tar halva bredden minus gap */
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(120, 119, 119, 0.9); 
+}
+
+/* Media query för laptop-storlek : container 1-2!!*/
+@media screen and (max-width: 1024px){
+    .verkstad-container{
+        flex-direction: column; /* Lägg elementen i kolumn i stället för rad */
+        align-items: center;
+    }
+    .left-text{
+        width: 100%;
+        height: auto;
+        font-size: 14px; /* Minska textstorleken på mindre skärmar */
+    }
+    .right-Bild{
+        width: 210px; /* original= 250px skärmar */
+        height: 400px; /* Justera höjden */
+    }
+    .right-Bild2, .right-Bild21 {
+        width: 100%;
+        max-width: 200px;
+        height: auto; 
+        margin-bottom: 15px;
+        
+    }
+
+    .right-Bild2 img, .right-Bild21 img {
+        width: 100%; 
+        height: auto; 
+        object-fit: contain;  
+    }
+
+    .verkstad-container {
+        gap: 15px; /* Minska mellanrummet mellan sektionerna */
+    }
+
+    .middle-text {
+        padding: 0 5px; 
+        font-size: 14px; 
+    }
+    .left-Bild2 img {
+        width: 100%; 
+        height: auto; 
+        object-fit: contain; 
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); 
+        margin: 0 auto; 
+    }
+   
+}
+/* Media query för mobil-storlek */
+@media screen and (max-width:600px){
+    .verkstad-container{
+        margin-top: 50px; /* Justera marginal för mindre skärmar */
+    }
+    .right-Bild{
+        width: 200px; /* Minska bredden ytterligare */
+        height: 300px; /* Justera höjden */
+    }
+    .text-content p{
+        padding: 10px; /* Minska padding för mobiler för att ge mer utrymme */
+        font-size: 16px; /* Minska textstorleken för mobiler */
+       
+    }
+    .text-content h2{
+        font-size: 24px;
+    }
+    /* container2 Justering för vänster bild */
+    .left-Bild2{
+        width: 200px; 
+        height: auto; 
+        margin: 20px auto; 
+        padding: 10px; 
+        box-sizing: border-box; 
+        background-color: white; 
+        border: 5px solid #180907; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    .left-Bild2 img {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        display: block; 
+       
+       
+    }
+        /* Justering för högersidans bilder */
+        .right-Bild2, .right-Bild21 {
+            width: 150px; 
+            height: auto; 
+            margin: 10px auto; 
+           
+        }
+    
+        .right-Bild2 img, .right-Bild21 img {
+            width: 100%; 
+            height: auto; 
+            object-fit: contain; 
+        }
+    
+        /* Justering för mitten-texten */
+        .middle-text {
+            font-size: 15px; 
+            padding: 10px; 
+            text-align: center; 
+        }
+    
+        /* Justering för container-layout */
+        .verkstad-container2 {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            gap: 15px; 
+        }
+}
+
+
+/*..Container 3: Tidningsartikel............................................................*/
+.verkstad-container3{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+.left-text3{
+    flex: 1;
+    width: 50%;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Låter text-content och left-Bild staplas vertikalt */
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: none; /* Ingen bakgrundsbild här */
+    
+}
+
+.left-text3 p{
+    font-family: 'CormorantUpright';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(102, 101, 101); /* Textfärg */
+}
+.left-text3 h2{
+    font-family: 'CormorantUpright';
+    font-weight:bolder;
+    font-style: normal;
+    font-size: 30px;
+    color: rgb(102, 101, 101); /* Textfärg */
+}
+
+.text-content3{
+    padding: 20px; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    overflow-y: auto; 
+}
+.right-Bild3{
+    flex: 1;
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Lägg till en skugga */
+    background-color: white; 
+    overflow: hidden;
+    padding: 10px;
+    border: 5px solid  #020e54; 
+    box-sizing: border-box;
+}
+.right-Bild3 img{
+    max-width: 100%; /* För att göra bilden responsiv */
+    height: auto;
+    object-fit: cover;  
+    background-color: white; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+
+}
+
+
+/* Media query för laptop-storlek : container TidningsContainer ....*/
+@media screen and (max-width: 1024px){
+    .verkstad-container3{
+        flex-direction: column; /* Lägg elementen i kolumn i stället för rad */
+        align-items: center;
+
+    }
+     
+    .left-text3 p{
+        width: 100%;
+        height: auto;
+        font-size: 14px; 
+
+    }
+    .left-text3 h2 {
+        font-size: 20px;
+    }
+    
+    .right-Bild3{
+        width: 400px;/* original= 250px skärmar */
+        height: auto; /* Justera höjden= 400px*/
+    }
+        
+} 
+
+@media screen and (max-width: 600px){
+
+    .verkstad-container3{
+        margin-top:20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .right-Bild3{
+        width: 80%;
+        margin-top: 10px;
+        padding: 5px;
+    }
+    .right-Bild3 img {
+        max-width: 100%; 
+        height: auto;
+    }
+    .left-text3{
+        width: 90%;
+        padding: 10px;
+    }
+    .left-text3 p {
+        font-size: 16px; /* Minska textstorleken på mindre skärmar */
+    }
+       
+    .left-text3 h2 {
+        font-size: 24px;
+       
+    }
+}
+
+/*.Container4 Grytlappar......................................................*/
+.verkstad-container4{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+.left-Bild4{
+    flex:2;
+    max-width:70%;
+    height:auto;
+    display:flex;
+    flex-direction:row;
+    margin:50px auto;
+    gap:10px;
+    padding: 10px;
+    box-sizing:border-box;
+    border: 5px solid #180907; 
+    background-color: white; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* SKUGGA FÖR DJUPEFFEKT */
+
+}
+
+.left-Bild4 img {
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    background-color: white; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* SKUGGA FÖR DJUPEFFEKT */
+   
+}
+.text-content4 {
+    flex:1;
+    max-width:30%;
+    margin:40px auto;
+
+}
+.text-content4 h2 {
+    font-family: 'CormorantUpright';
+    font-weight:bolder;
+    font-style: normal;
+    font-size: 30px;
+    color: rgb(102, 101, 101); /* Textfärg */
+}  
+.text-content4 p{
+    font-family: 'CormorantUpright';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(102, 101, 101); /* Textfärg */
+}
+
+@media screen and (max-width: 600px){
+
+    .verkstad-container4{
+        margin-top:20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:10px;
+        gap: 10px;
+        
+    }
+    .left-Bild4{
+        max-width: 100%; 
+        height: auto;
+        flex-direction: column; 
+        gap: 5px; 
+        margin: 20px 0; 
+        padding: 5px; 
+    }
+    .left-Bild4 img {
+        width: 100%; 
+        height: auto; /* Anpassa höjden proportionerligt */
+    }
+    .text-content4{
+        max-width: 90%; 
+        margin: 5px 0; 
+        text-align: center; 
+    }
+    .text-content4 p {
+        font-size: 16px; /* Minska textstorleken på mindre skärmar */
+    }
+       
+    .text-content4 h2 {
+        font-size: 24px;
+       
+    }
+}
+
+@media screen and (max-width:1024px){
+    .verkstad-container4{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:10px;
+        gap: 5px;
+        margin-top: 25px;
+        
+    }
+    .left-Bild4 {
+        max-width: 50%; /* Se till att bilderna tar upp hela bredden */
+        height: auto;
+        flex-direction: column; 
+        gap: 5px; 
+        margin: 20px 0; 
+        padding: 10px; 
+    }
+    .left-Bild4 img {
+        width: 100%; 
+        height: auto; 
+    }
+    .text-content4{
+        max-width: 90%;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .text-content4 p {
+        font-size: 16px;
+       
+    }
+    .text-content4 h2{
+        font-size: 24px;
+    }
+}
+
+
+/*..Slides för fåglar. längst ned på verkstadssidan..........*/
+.slideshow-title {
+    text-align: center;
+    font-family: 'CormorantUpright';
+    font-weight:bolder;
+    font-style: normal;
+    color: rgb(102, 101, 101); /* Textfärg */
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+   
+}
+.slideshow-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 20px 0 100px; /* Övre, vänster-höger och nedre marginal =margin: 100px 0 100px*/
+    padding: 0 20px; /* Ger lite utrymme på vänster och höger sida */
+    overflow-x: auto;
+}
+
+.slideshow-container img {
+    height: 250px;
+    width: 308px;
+    flex-shrink: 0; /* Förhindrar att bilder krymper */
+    border: 3px solid #1b1a1a; 
+    padding:8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    margin-bottom: 18px;
+}
+.slideshow-container::-webkit-scrollbar {
+    height: 10px;
+   
+}
+
+.slideshow-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 18px;
+}
+
+.slideshow-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+        /* Responsiv design */
+@media (max-width: 768px) {
+    .slideshow-container img {
+        height: 180px; /* Minska höjd för mindre skärmar */
+        width: 252px; /* Anpassa bredd proportionellt */
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container img {
+        height: 150px; 
+        width: 210px; 
+    }
+}
+
+/*  FOOTER SECTION...............*/
+footer{
+    width: 100%;
+    background-color: #171a43;
+    color:  #dcd9d9; 
+    text-align: center;
+    padding: 20px 0;
+}
+footer a{
+    color: #dcd9d9; 
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

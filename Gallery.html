@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Black White Jul gran</title>
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script src="../JS/GalleryjavaS.js" defer></script>
+    
+    <!-- Material Symbols för menyikonen från google fonts+ikoner -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    
+</head>
+
+<body>
+ <!-- Contents for: NAV BAR------------------------------------------------------------->
+ <section class="header">
+    <!-- Länkar FLAGGA LÄNK-->
+    <div class="flag-container">
+        <!-- Länkar Svenska sidan till svenska flaggan -->
+        <a href="Gallery_SV.html" title="Go to Swedish page">
+            <img src="se.svg" alt="Sweden Flag">
+        </a>
+
+        <!-- Länkar Eng sidan till eng flaggan.... -->
+         <a href="Gallery.html" title="Go to English page">
+            <img src="gb.svg" alt="England Flag">
+         </a>
+        
+    </div>
+
+    <nav>
+        <!--här: input+label 'checkbox' till mindre skärmar-->
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        
+         <!-- Länkar --> 
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="Workshop.html">Workshop</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Books.html">Books</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+ </section>  
+   
+
+<!--- Slides show with sceaneries with caption text ------------------------------->
+<div class="slideshow-container1">
+      
+    <div class="mySlides fade">
+        <div class="numbertext">1/7</div>
+        <img src="../images/skog.JPG" alt="Sea image1"> 
+        <div class="text">Beech Forest on Lidingö</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2/7</div>
+        <img src="../images/brygga.jpg" alt="Sea image2">
+        <div class="text">Sea Side</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3/7</div>
+        <img src="../images/LBro.JPG" alt="Sea image3">
+        <div class="text">The Lidingö Bridge</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4/7</div>
+        <img src="../images/Lidingö1.jpg" alt="Sea image3">
+        <div class="text">Lidingö Landscape</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5/7</div>
+        <img src="../images/lövskogar.jpg" alt="Sea image3">
+        <div class="text">Autumn</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">6/7</div>
+        <img src="../images/BlommaStaty.JPG" alt="Sea image3">
+        <div class="text">Millersgården Cultural Center Garden</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">7/7</div>
+        <img src="../images/StatyFontän1.JPG" alt="Sea image3">
+        <div class="text">Statues at Millersgården</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">7/7</div>
+        <img src="../images/JobbarMan.JPG" alt="Sea image3">
+        <div class="text">Home Office</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">7/7</div>
+        <img src="../images/lusthus.JPG" alt="Sea image3">
+        <div class="text">Elfviksudde: A Peninsula of Tranquility</div>
+    </div>
+
+
+     <!-- Next and previous buttons -->
+     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+     <a class="next" onclick="plusSlides(1)">&#10095;</a><br>
+
+      <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
+    </div>
+         
+</div>
+
+<!-- BLACK AND WHITE CONTAINER---------2 pictures..............-->
+<div class="container">
+    <div class="wrapper">
+        <div class="images">
+            <div class="img-1"></div>
+            <div class="img-2"></div>
+        </div>
+        <div class="slider">
+            <div class="drag-line">
+                <span></span>
+            </div>
+            <input type="range" min="0" max="100" value="50">
+        </div>
+        
+    </div>
+     <!-- container with black and white pictures..All class have = zero in end-29 dec START HERE!!!............-->
+    <div class="wrapper0">
+        <div class="images0">
+            <div class="img-10"></div>
+            <div class="img-20"></div>
+        </div>
+        <div class="slider0">
+            <div class="drag-line0">
+                <span></span>
+            </div>
+                <input type="range" min="0" max="100" value="50">
+        </div>
+    </div>
+</div>
+<h4 class="h4-text">These photos of statues were taken at Millersgården in Lidingö. The picture can be viewed both color and black and white by clicking
+    and dragging left or right using the small white ball at the top of the image.</h4>
+
+ <!-- Contents for slide-container: BOOKS photos; wide container with small pictures of books!-------------------------------->
+<div class="slideshow-title">Capturing Shetland: Land, Sea and Sky</div>
+<div class="slideshow-books">
+    <img src="../images/test1.JPG" alt="Book 1">
+    <img src="../images/test2.JPG" alt="Book 2">
+    <img src="../images/test8.JPG" alt="Book 3">
+    <img src="../images/test4.JPG" alt="Book 4">
+    <img src="../images/test5.JPG" alt="Book 5">
+    <img src="../images/test6.JPG" alt="Book 6">
+    <img src="../images/test71.JPG" alt="Book 7">
+    <img src="../images/Test31.JPG" alt="Book 8">
+    <img src="../images/test9.JPG" alt="Book 9">
+    <img src="../images/test10.JPG" alt="Book 10">
+    <img src="../images/test11.JPG" alt="Book 11">
+    <img src="../images/test12.JPG" alt="Book 12">
+</div>
+ 
+<!--Footer-= container------------------------------------>
+<footer>
+    <p class="">&copy; 2025 Ylva & Eddie Granlund</p>
+    <p>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com" target="_blank">facebook</a>
+    </p>
+
+</footer>
+ 
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Ylva & Eddie</title>
+    <link  rel="stylesheet" href="../css/home.css">
+
+     <!-- Material Symbols för menyikonen från google fonts+ikoner -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    
+</head>
+<body>
+    <section class="header">
+        <!-- Länkar FLAGGA LÄNK-->
+        <div class="flag-container">
+            <!-- Länkar Svenska sidan till svenska flaggan -->
+            <a href="index_SV.html" title="Go to Swedish page">
+                <img src="se.svg" alt="Sweden Flag">
+            </a>
+
+            <!-- Länkar Eng sidan till eng flaggan.... -->
+             <a href="index.html" title="Go to English page">
+                <img src="gb.svg" alt="England Flag">
+             </a>
+            
+        </div>
+
+        <nav>
+            <!--här: input+label 'checkbox' (hamburgermenu)till mindre skärmar-->
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <span class="material-symbols-outlined">menu</span>
+            </label>
+
+             <!-- Länkar --> 
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index_SV.html">Välkommen</a></li>
+                    <li><a href="Workshop_SV.html">Verkstad</a></li>
+                    <li><a href="Gallery_SV.html">Galleri</a></li>
+                    <li><a href="Books_SV.html">Böcker</a></li>
+                    <li><a href="contact_SV.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <img src="../images/Sea1.jpg" id="Smallimg">
+        <canvas id="cnv"></canvas>
+        <script src="../JS/snow.js"></script>
+    </section>
+
+    <!--Välkomst del-------------------------------------->
+    <div class="welcome-container">
+        
+        <div class="content">
+            <h2 class="title">Välkommen till vår hemsida "Drömvidd"</h2>
+            <p class="welcome-text">"Drömvidd" – där natur, hantverk och inspiration möts!</p><br>
+            <p class="welcome-text">Välkommen till oss – en plats där naturens skönhet möter kreativt hantverk. Här hittar du unika bilder från Shetland och Lidingö, handgjorda träfåglar, böcker fulla av inspiration och praktiska grytvantar – allt skapat med kärlek och omsorg.<br>
+                Vi har en förkärlek till Shetland och dess natur. Varje år har vi åkt till Shetland, besökt vänner och rest runt, upptäckt nya platser och upplevt mycket.                  
+                Efter varje resa ger vi ut en bok. Texten står jag, Ylva, för, och Eddie, min man, står för bilderna. Inför varje resa tränar vi hårt för att orka vandra med packning på det öppna landskapet på Shetland. <br>
+                Vi är naturmänniskor och läser på, tar reda på så mycket vi kan innan varje resa. Våra artiklar och bilder har publicerats i DN. <br>Det här är vår livsstil.<br>
+                Detta är vår första hemsida, och här tänker vi dela våra berättelser och bloggar med er.<br>
+                Nu är det tionde gången som Eddie och jag reser till Shetlandöarna, en plats vi blivit alltmer fascinerade av att besöka och upptäcka. Vid varje resa har vi försökt åka till Foula, en enastående ö norr om Shetland. I år, på vårt tionde besök, har vi inte lyckats komma med flyget.<br>
+                
+                Fortsättning följer i vår nya bok som kommer att lanseras kring vår/sommar.  
+            </p>
+
+        </div>
+
+        <div class="image-ylvaeddie">
+            <img src="../images/YlvaEddie.JPG" alt="ylva och eddie skålar">
+        </div>
+    </div>
+
+    <!--Citat del MED JS script!!!------------------------------------->
+    <div class="citat-container">
+        <div class="citat-content">
+            <h3>Aphorism</h3>
+            <h4 id="dynamisk-citat"></h4>
+            <script src="../JS/citat.js" defer></script>
+        </div>
+
+        <div class="image-citat">
+            <img src="../images/Lunne11.JPG" alt="bild på Lunnefågel">
+        </div>
+        
+
+    </div>
+
+     <!--Senaste nyhet och kommande-= container-Senaste nytt----------------------------------->
+     <div class="SenasteNytt-container">
+        <div class="senastenytt-content">
+            <h3>Äventyret Fortsätter: Resan till Shetland och Magiska Möten</h3><br>
+            <p class="senastenytt-text">Välkommen till vår blogg om senaste nyheter och upplevelser!<br>
+                Den här gången tar vi dig med till den fängslande ögruppen Shetland, där naturens skönhet, spännande möten och oförglömliga stunder präglar vårt äventyr.<br>
+            </p><br>
+            <hr style="color: #dcd9d9"><br>
+            <h5>Utforskning av Shetlands Natur</h5>
+            <p class="senastenytt-text">Vi anlände till Shetland tidigt en solig morgon, och redan vid första anblicken blev vi förälskade i de karga landskapen. Klipporna som stupar brant ned i Atlanten och de vilda hedarna är som tagna ur en saga. Första dagen spenderade vi med att vandra längs kustlinjen vid Eshaness, där vi fascinerades av de dramatiska klippformationerna och de ständigt rullande vågorna.</p><br>
+
+            <h5>Möten med Nya Vänner</h5>
+            <p class="senastenytt-text">En av de mest minnesvärda delarna av resan var de fantastiska människorna vi träffade. På en liten pub i Lerwick fick vi chansen att prata med lokalbor som berättade historier om Shetlands kultur och historia. En av dem, en äldre fiskare vid namn Tom, delade med sig av sina upplevelser av att navigera de stormiga haven och om Shetlands stolta vikingaarv.<br>
+                Vi blev också bjudna till en traditionell "Shetland fiddlers night", där vi dansade till livfull musik och fick uppleva den varma gemenskapen bland lokalborna.</p> <br>
+
+            <h5>Fåglar och Fägring</h5>
+            <p class="senastenytt-text">För djurälskare är Shetland en dröm. Vi besökte Hermaness National Nature Reserve och fick syn på ett rikt djurliv, inklusive lunnefåglar och havssulor som seglade majestätiskt över havet. Att se dessa fåglar på nära håll var inget annat än en ynnest.<br>
+                Och inte att förglömma: Shetlandsponnyerna! Vi mötte dessa charmiga små hästar ute i det fria och kunde inte låta bli att ta massor av bilder. De är verkligen lika vackra som bilderna gör gällande.</p><br>
+                
+            <h5>Minnesvärda Händelser</h5>
+            <p class="senastenytt-text">Under vår vistelse stötte vi på en spännande lokal festival, Up Helly Aa, en hyllning till Shetlands vikingaarv. Fackeltåget och det storslagna brännandet av en vikingaskeppsreplika var en upplevelse vi aldrig kommer att glömma.<br>
+                Vi tog även chansen att segla ut till Mousa Broch, en imponerande stenstruktur från järnåldern, och fick en fördjupad känsla för regionens historia och mystik.</p><br>
+
+            <h5>Avslutande Tankar</h5>
+            <p class="senastenytt-text">Vår resa till Shetland var en upplevelse som berörde alla våra sinnen. Från naturens skönhet och lokalbefolkningens värme till de unika kulturella upplevelserna – allt detta gjorde resan oförglömlig. 
+
+                Vi ser fram emot att dela med oss av fler bilder och historier härifrån, och vi hoppas att vi har kunnat inspirera dig att besöka denna fantastiska plats.<br>
+                Tills nästa äventyr, häng med oss för fler spännande resor och upptäckter!</p><br>  
+
+        </div>
+     </div>
+
+
+     <!--video inspeln-= container-video nytt----------------------------------->
+     <div class="video-container">
+        <h3>Naturmorgon</h3>
+        <video src="../video/EddieVideo1.mp4" controls></video>
+        <video src="../video/EddieVideo1.mp4" controls></video>
+     </div>
+
+    
+     <!--Footer-= container------------------------------------>
+     <footer>
+        <p class="">&copy; 2025 Ylva & Eddie Granlund</p>
+        <p>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com" target="_blank">facebook</a>
+        </p>
+
+     </footer>
+    
+</body>
+</html>
