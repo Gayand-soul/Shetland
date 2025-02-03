@@ -269,37 +269,37 @@ nav{
 /* SLIDE SHOW BOOKS STARTS HERE.........................*/
 .slideshow-title {
     text-align: center;
-    font-style: 'CormorantUpright';
+    font-style:'CormorantUpright';
     font-size: 34px;
-    font-weight: lighter;
+    font-weight: normal;
     margin-bottom: 20px;
     margin-top: 100px;
-    color:  #fff; 
+    color: #f8f4f4;
+    line-height: 1.6;
+
 }
 
 .slideshow-container {
     display: flex;
     gap: 10px;
     justify-content: flex-start;
-    margin: 20px 0 100px; /* Övre, vänster-höger och nedre marginal =margin: 100px 0 100px*/
-    padding: 0 20px; /* Ger lite utrymme på vänster och höger sida */
+    margin: 20px 0 100px; 
+    padding: 0 20px; 
     overflow-x: auto;
 }
 .slideshow-container img {
     height: 250px;
     width: 308px;
-    flex-shrink: 0; /* Förhindrar att bilder krymper */
-    border: 1px solid #ccc; /* Optional: Ger en ram runt bilderna */
-    /*border-radius: 10px;*/
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Ger en liten skugga */
-    margin-bottom: 18px; /*.avståndet mellan bider och scrollbar...*/
+    flex-shrink: 0; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 18px; 
 }
 
 .slideshow-container::-webkit-scrollbar {
     height: 10px;
    
 }
-
 .slideshow-container::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 18px;
@@ -308,20 +308,21 @@ nav{
 .slideshow-container::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-        /* Responsiv design FOR BOOK SLIDE SHOW */
-        @media (max-width: 768px) {
-            .slideshow-container img {
-                height: 180px; /* Minska höjd för mindre skärmar */
-                width: 252px; /* Anpassa bredd proportionellt */
-            }
-        }
 
-        @media (max-width: 480px) {
-            .slideshow-container img {
-                height: 150px; /* Ytterligare minskning för små skärmar */
-                width: 210px; /* Anpassa bredd proportionellt */
-            }
-        }
+/* Responsiv design FOR BOOK SLIDE SHOW */
+@media (max-width: 768px) {
+    .slideshow-container img {
+        height: 180px; /* Minska höjd för mindre skärmar */
+        width: 252px; /* Anpassa bredd proportionellt */
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container img {
+        height: 150px; /* Ytterligare minskning för små skärmar */
+        width: 210px; /* Anpassa bredd proportionellt */
+    }
+}
 
         
 /*  FOOTER SECTION...............*/
