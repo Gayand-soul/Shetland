@@ -306,20 +306,21 @@ nav{
 .slideshow-container::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-        /* Responsiv design FOR BOOK SLIDE SHOW */
-        @media (max-width: 768px) {
-            .slideshow-container img {
-                height: 180px; /* Minska höjd för mindre skärmar */
-                width: 252px; /* Anpassa bredd proportionellt */
-            }
-        }
 
-        @media (max-width: 480px) {
-            .slideshow-container img {
-                height: 150px; /* Ytterligare minskning för små skärmar */
-                width: 210px; /* Anpassa bredd proportionellt */
-            }
-        }
+/* Responsiv design FOR BOOK SLIDE SHOW */
+ @media (max-width: 768px) {
+    .slideshow-container img {
+        height: 180px; /* Minska höjd för mindre skärmar */
+        width: 252px; /* Anpassa bredd proportionellt */
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container img {
+        height: 150px; /* Ytterligare minskning för små skärmar */
+        width: 210px; /* Anpassa bredd proportionellt */
+    }
+}
 
         
 /*  FOOTER SECTION...............*/
@@ -337,5 +338,4 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
-}
-}
+}}

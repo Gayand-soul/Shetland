@@ -165,11 +165,11 @@ nav{
 .left-child {
     flex: 1; /*  tar upp lika stor plats */
     padding: 20px;
-    box-sizing: border-box; /* För att säkerställa att padding inte påverkar bredden */
-    overflow-wrap: break-word; /* Förhindrar att långa ord inte bryts och hoppar utanför */
-    word-wrap: break-word;/* Kompletterar overflow-wrap för äldre webbläsare */
-    max-height: 100%; /* Säkerställer att texten inte växer utanför höjden på container */
-    overflow-y: auto; /* Gör så att texten scrollar om den är för lång */
+    box-sizing: border-box; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    max-height: 100%; 
+    overflow-y: auto; 
 }
 /* Anpassning av scrollbarens utseende */
 .left-child::-webkit-scrollbar {
