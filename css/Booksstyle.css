@@ -235,18 +235,20 @@ nav{
     .left-child {
         padding: 15px;
         width: 100%; /* Gör att vänster text tar upp hela bredden */
-        font-size: 14px; 
+        font-size: 14px; /* Minska textstorleken på mindre skärmar */
+    }
 
     .right-child {
         width: 100%; /* Gör att bilderna tar upp hela bredden */
-        justify-content: center; 
+        justify-content: center; /* Justera bilderna till mitten */
     }
 
     .right-child img {
         width: 90%; /* Gör att bilderna anpassar sig till mindre skärm */
-        margin: 10px 0; 
+        margin: 10px 0; /* Lägg till margin för att ge utrymme mellan bilder */
     }
 }
+
 
 /* Media query för mobil-storlek */
 @media screen and (max-width: 600px) {
@@ -321,7 +323,6 @@ nav{
     }
 }
 
-        
 /*  FOOTER SECTION...............*/
 footer{
     width: 100%;
@@ -337,4 +338,4 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
-}}
+}
