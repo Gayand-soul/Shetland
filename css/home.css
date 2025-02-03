@@ -9,15 +9,15 @@ body{
 
 @font-face {
     font-family: 'Charm';
-    src: url(../fonts/Charm-Bold.ttf) format("truetype"), url(../fonts/Charm-Regular.ttf) format("truetype");
+    src: url(fonts/Charm-Bold.ttf) format("truetype"), url(fonts/Charm-Regular.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {   /*....Cormora tror jag ok....*/
     font-family: 'CormorantUpright';
-    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
-    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    src: url(fonts/CormorantUpright-Bold.ttf) format("truetype"), url(fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(fonts/CormorantUpright-Medium.ttf) format("truetype"),url(fonts/CormorantUpright-Regular.ttf) format("truetype"),url(fonts/CormorantUpright-SemiBold.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -26,7 +26,7 @@ body{
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image:url(../images/FrozenSea1.jpg);
+    background-image:url(images/FrozenSea1.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -262,7 +262,7 @@ nav{
 .SenasteNytt-container{
     width: 100%;
     height: 1050px;
-    background: linear-gradient(rgba(128,128,128,0.9), rgba(0,128,128,0.6)), url(../images/Hav13.JPG);/*..original= rgba(0,0,0,0.4)....*/
+    background: linear-gradient(rgba(128,128,128,0.9), rgba(0,128,128,0.6)), url(images/Hav13.JPG);/*..original= rgba(0,0,0,0.4)....*/
     display: flex;
     flex-direction: row;/*..för horisontell layout(original = column)*/
     align-items:center;  /*..TESTAS....*/

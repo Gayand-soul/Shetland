@@ -3,11 +3,10 @@ body{
     
     background-color: #b0abab;
 }
-
 @font-face {   /*....Cormora tror jag ok....*/
     font-family: 'CormorantUpright';
-    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
-    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    src: url(fonts/CormorantUpright-Bold.ttf) format("truetype"), url(fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(fonts/CormorantUpright-Medium.ttf) format("truetype"),url(fonts/CormorantUpright-Regular.ttf) format("truetype"),url(fonts/CormorantUpright-SemiBold.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }

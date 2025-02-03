@@ -5,15 +5,15 @@ body{
 }
 @font-face {
     font-family: 'Charm';
-    src: url(../fonts/Charm-Bold.ttf) format("truetype"), url(../fonts/Charm-Regular.ttf) format("truetype");
+    src: url(fonts/Charm-Bold.ttf) format("truetype"), url(fonts/Charm-Regular.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {   /*....Cormora tror jag ok....*/
     font-family: 'CormorantUpright';
-    src: url(../fonts/CormorantUpright-Bold.ttf) format("truetype"), url(../fonts/CormorantUpright-Light.ttf) format("truetype"),
-    url(../fonts/CormorantUpright-Medium.ttf) format("truetype"),url(../fonts/CormorantUpright-Regular.ttf) format("truetype"),url(../fonts/CormorantUpright-SemiBold.ttf) format("truetype");
+    src: url(fonts/CormorantUpright-Bold.ttf) format("truetype"), url(fonts/CormorantUpright-Light.ttf) format("truetype"),
+    url(fonts/CormorantUpright-Medium.ttf) format("truetype"),url(fonts/CormorantUpright-Regular.ttf) format("truetype"),url(fonts/CormorantUpright-SemiBold.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -170,26 +170,26 @@ nav{
 }
 
 .left-Bild {
-    width: 90%; /* Minskad bredd för att undvika krock */
-    height: auto; /* Anpassa höjden proportionellt */
-    margin-top: 5px; /* Skapa avstånd mellan text och bild */
-    display: flex; /* Flexbox för att centrera innehållet */
+    width: 90%; 
+    height: auto; 
+    margin-top: 5px; 
+    display: flex; 
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Hindrar att bilden sträcker sig utanför ramarna */
-    background-color: white; /* Bakgrundsfärg */
-    padding: 10px; /* Padding för att skapa mellanrum mellan bilden och ramen */
-    border: 5px solid #7a3c02; /* Lägg till en ram som ser ut som en tavelram */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Förbättrad skugga för att ge djup */
-    box-sizing: border-box; /* Inkludera padding och border i bredd/ höjd */
+    overflow: hidden; 
+    background-color: white; 
+    padding: 10px; 
+    border: 5px solid #7a3c02; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+    box-sizing: border-box; 
     gap: 10px;
 }
 
 .left-Bild img {
-    width: 100%; /* Anpassa bilden till containerbredden */
-    height: auto; /* Behåll bildens proportioner */
-    object-fit: cover; /* Behåll rätt dimensioner */
-    display: block; /* Tar bort extra mellanrum från inline-element */
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    display: block; 
     
 }
 .left-text{
@@ -234,25 +234,25 @@ nav{
 
 /* Container nr2 för verkstad ..................................................................*/
 .verkstad-container2{
-    display: flex; /* Använd flexbox för att placera barnen horisontellt */
-    justify-content: space-between; /* Lämna utrymme mellan vänster, mitten och höger */
+    display: flex; 
+    justify-content: space-between; 
     align-items: flex-start; /* Justera innehållet upptill */
-    width: 100%; /* Anpassa till bredden på sidan */
-    gap: 20px; /* Skapa mellanrum mellan vänster, mitten och höger */
+    width: 100%; 
+    gap: 20px; 
 }
 .left-Bild2{
-    width: 100%; /* Minskad bredd för att undvika krock */
-    height: auto; /* Anpassa höjden proportionellt */
-    margin-top: 20px auto; /* Skapa avstånd mellan text och bild */
-    display: flex; /* Flexbox för att centrera innehållet */
+    width: 100%; 
+    height: auto; 
+    margin-top: 20px auto; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Hindrar att bilden sträcker sig utanför ramarna */
-    background-color: white; /* Bakgrundsfärg */
-    padding: 10px; /* Padding för att skapa mellanrum mellan bilden och ramen */
-    border: 5px solid #180907; /* Lägg till en ram som ser ut som en tavelram */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Förbättrad skugga för att ge djup */
-    box-sizing: border-box; /* Inkludera padding och border i bredd*/
+    overflow: hidden; 
+    background-color: white; 
+    padding: 10px; 
+    border: 5px solid #180907; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+    box-sizing: border-box; 
    
 }
 .left-Bild2 img{
@@ -274,17 +274,17 @@ nav{
     overflow-y: auto; /* Scrollar om texten är för lång */
 }
 .right-Bild2, .right-Bild21{
-    width: 550px; /* Minskad bredd för att undvika krock */
+    width: 550px; 
     height: 298px; /* Anpassa höjden proportionellt för skärm=mycket störreÄNDRA EJ!*/
-    margin-top: 150px; /* Skapa avstånd mellan text och bild */
-    display: flex; /* Flexbox för att centrera innehållet */
+    margin-top: 150px; 
+    display: flex; 
     justify-content: center;
-    align-items: center;   /* Centrera bilderna vertikalt */
-    overflow: hidden; /* Hindrar att bilden sträcker sig utanför ramarna */
+    align-items: center;  
+    overflow: hidden; 
     background-color: white; /* Bakgrundsfärg */
-    padding: 10px; /* Padding för att skapa mellanrum mellan bilden och ramen */
-    border: 5px solid #180907; /* Lägg till en ram som ser ut som en tavelram */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Förbättrad skugga för att ge djup */
+    padding: 10px; 
+    border: 5px solid #180907; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
     box-sizing: border-box; /* Inkludera padding och border i bredd*/
    
     
@@ -320,8 +320,8 @@ nav{
     }
 
     .right-Bild2 img, .right-Bild21 img {
-        width: 100%; /* Bilden fyller containerns nya bredd */
-        height: auto; /* Bilden fyller containerns nya höjd */
+        width: 100%;
+        height: auto; 
         object-fit: contain;  /* Se till att hela bilden alltid syns */
     }
 
@@ -363,21 +363,21 @@ nav{
     .left-Bild2{
         width: 200px; 
         height: auto; 
-        margin: 20px auto; /* CENTRERA CONTAINERN HORISONTELLT */
-        padding: 10px; /* MELLANRUM MELLAN BILDEN OCH RAMENS KANT */
-        box-sizing: border-box; /* SÄKERSTÄLL ATT PADDING OCH BORDER RÄKNAS IN I TOTALSTORLEKEN */
-        background-color: white; /* BAKGRUNDSFÄRG SOM SIMULERAR EN TAVLA */
-        border: 5px solid #180907; /* RAM RUNT CONTAINERN */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* SKUGGA FÖR DJUPEFFEKT */
-        display: flex; /* FLEXBOX FÖR ATT CENTRERA BILDEN */
-        justify-content: center; /* HORISONTELL CENTRERING AV BILDEN */
-        align-items: center; /* VERTIKAL CENTRERING AV BILDEN */
+        margin: 20px auto; 
+        padding: 10px; 
+        box-sizing: border-box; 
+        background-color: white; 
+        border: 5px solid #180907; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
     }
     .left-Bild2 img {
-        width: 100%; /* GÖR BILDEN LIKA BREDD SOM CONTAINERN */
-        height: auto; /* BEVARA BILDENS PROPORTIONER */
-        object-fit: cover; /* JUSTERA INNEHÅLLET SÅ ATT BILDEN FYLLER UT RÄTT UTAN FÖRVRÄNGNING */
-        display: block; /* BLOCK-FORMAT FÖR ATT UNDVIKA OVÄNTAT BETEENDE */
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        display: block; 
        
        
     }
@@ -391,23 +391,23 @@ nav{
     
         .right-Bild2 img, .right-Bild21 img {
             width: 100%; /* Fyll containerbredden */
-            height: auto; /* Bevara proportionerna */
+            height: auto; 
             object-fit: contain; /* Se till att hela bilden syns */
         }
     
         /* Justering för mitten-texten */
         .middle-text {
-            font-size: 15px; /* Minska textstorleken för mobiler */
-            padding: 10px; /* Minska padding för att ge mer plats */
-            text-align: center; /* Centrera texten */
+            font-size: 15px; 
+            padding: 10px; 
+            text-align: center; 
         }
     
         /* Justering för container-layout */
         .verkstad-container2 {
             display: flex;
             flex-direction: column; /* Ordna alla element vertikalt */
-            align-items: center; /* Centrera allt horisontellt */
-            gap: 15px; /* Skapa mellanrum mellan elementen */
+            align-items: center; 
+            gap: 15px; 
         }
 }
 
@@ -452,8 +452,8 @@ nav{
 }
 
 .text-content3{
-    padding: 20px; /* Padding runt texten */
-    overflow-wrap: break-word; /* Förhindrar att långa ord bryts */
+    padding: 20px; 
+    overflow-wrap: break-word; 
     word-wrap: break-word; /* Kompletterar overflow-wrap för äldre webbläsare */
     overflow-y: auto; /* Scrollar om texten är för lång */
 }
@@ -605,19 +605,19 @@ nav{
     .left-Bild4{
         max-width: 100%; /* Se till att bilderna tar upp hela bredden */
         height: auto;
-        flex-direction: column; /* Lägg bilderna i en kolumn */
-        gap: 5px; /* Minska avståndet mellan bilderna */
-        margin: 20px 0; /* Mindre vertikalt mellanrum */
-        padding: 5px; /* Minska padding */
+        flex-direction: column; 
+        gap: 5px; 
+        margin: 20px 0; 
+        padding: 5px; 
     }
     .left-Bild4 img {
         width: 100%; /* Gör bilderna responsiva */
         height: auto; /* Anpassa höjden proportionerligt */
     }
     .text-content4{
-        max-width: 90%; /* Minska textbredden för att passa mindre skärmar */
-        margin: 5px 0; /* Justera vertikal marginal */
-        text-align: center; /* Centrera texten */
+        max-width: 90%; 
+        margin: 5px 0; 
+        text-align: center; 
     }
     .text-content4 p {
         font-size: 16px; /* Minska textstorleken på mindre skärmar */
@@ -642,14 +642,14 @@ nav{
     .left-Bild4 {
         max-width: 50%; /* Se till att bilderna tar upp hela bredden */
         height: auto;
-        flex-direction: column; /* Lägg bilderna i en kolumn */
-        gap: 5px; /* Minska avståndet mellan bilderna */
-        margin: 20px 0; /* Mindre vertikalt mellanrum */
+        flex-direction: column; 
+        gap: 5px; 
+        margin: 20px 0; 
         padding: 10px; /* Minska padding */
     }
     .left-Bild4 img {
-        width: 100%; /* Gör bilderna responsiva */
-        height: auto; /* Anpassa höjden proportionerligt */
+        width: 100%; 
+        height: auto; 
     }
     .text-content4{
         max-width: 90%;
