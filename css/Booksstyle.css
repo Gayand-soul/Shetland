@@ -269,10 +269,11 @@ nav{
     text-align: center;
     font-style:'CormorantUpright';
     font-size: 34px;
-    font-weight: lighter;
+    font-weight: normal;
     margin-bottom: 20px;
     margin-top: 100px;
-    color:#fff; 
+    color: #f8f4f4;
+    line-height: 1.6;
 }
 
 .slideshow-container {
@@ -296,7 +297,6 @@ nav{
     height: 10px;
    
 }
-
 .slideshow-container::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 18px;
@@ -307,7 +307,7 @@ nav{
 }
 
 /* Responsiv design FOR BOOK SLIDE SHOW */
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .slideshow-container img {
         height: 180px; /* Minska höjd för mindre skärmar */
         width: 252px; /* Anpassa bredd proportionellt */

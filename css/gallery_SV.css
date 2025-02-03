@@ -321,7 +321,7 @@ nav{
     height: 100%;
     width: 50%;  /*.halva bilden visas i svartvit/halva visas i color..*/
     filter: blur(0.5px); /*..lite suddig effect..*/
-    background: url("../mages/staty-black.JPG") no-repeat;/*.blacknwhite picture!....*/
+    background: url("../images/staty-black.JPG") no-repeat;/*.blacknwhite picture!....*/
 }
 .wrapper .slider{
     position: absolute;

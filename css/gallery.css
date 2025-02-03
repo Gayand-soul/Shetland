@@ -314,14 +314,14 @@ nav{
 .wrapper .images .img-1{
     height: 100%;
     width: 100%;
-    background: url("/images/staty-color.JPG") no-repeat;/*.color picture!....*/
+    background: url("../images/staty-color.JPG") no-repeat;/*.color picture!....*/
 }
 .wrapper .images .img-2{
     position: absolute;
     height: 100%;
     width: 50%;  /*.halva bilden visas i svartvit/halva visas i color..*/
     filter: blur(0.5px); /*..lite suddig effect..*/
-    background: url("/images/staty-black.JPG") no-repeat;/*.blacknwhite picture!....*/
+    background: url("../images/staty-black.JPG") no-repeat;/*.blacknwhite picture!....*/
 }
 .wrapper .slider{
     position: absolute;
@@ -413,14 +413,14 @@ nav{
 .wrapper0 .images0 .img-10{
     height: 100%;
     width: 100%;
-    background: url("/images/Woman-color.JPG") no-repeat;/*.color picture!....*/
+    background: url("../images/Woman-color.JPG") no-repeat;/*.color picture!....*/
 }
 .wrapper0 .images0 .img-20{
     position: absolute;
     height: 100%;
     width: 50%;  /*.halva bilden visas i svartvit/halva visas i color..*/
     filter: blur(0.5px); /*..lite suddig effect..*/
-    background: url("/images/Woman-black.JPG") no-repeat;/*.blacknwhite picture!....*/
+    background: url("../images/Woman-black.JPG") no-repeat;/*.blacknwhite picture!....*/
 }
 .wrapper0 .slider0{
     position: absolute;
