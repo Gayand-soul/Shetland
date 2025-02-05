@@ -186,7 +186,7 @@ nav{
 }
 
 .left-child::-webkit-scrollbar-thumb:hover {
-    background:#fdfdfd; /* När användaren håller muspekaren på scrollhantaget, gör den lite mörkare */
+    background: #1d0477; /* När användaren håller muspekaren på scrollhantaget, gör den lite mörkare */
 }
 /* Högra child (bild) */
 .right-child {
@@ -301,12 +301,12 @@ nav{
    
 }
 .slideshow-container::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: #0c4bc1;
     border-radius: 18px;
 }
 
 .slideshow-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+    background-color: #050355;
 }
 
 /* Responsiv design FOR BOOK SLIDE SHOW */
@@ -332,6 +332,7 @@ footer{
     color:  #dcd9d9; 
     text-align: center;
     padding: 20px 0;
+    box-sizing: border-box;
 }
 footer a{
     color: #dcd9d9; 
@@ -340,4 +341,48 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
+}
+/*..Media Q för footer........................*/ 
+/* För mobil (upp till 480px) */
+@media (max-width: 480px) {
+    footer {
+        width:100%;
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+    footer p {
+        margin-bottom: 5px;
+    }
+    footer a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* För tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    footer {
+        width:100%;
+        padding: 18px 15px;
+        font-size: 16px;
+    }
+}
+
+/* För laptop (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    footer {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+}
+
+/* mycket större skärmar (1201px och uppåt) */
+@media (min-width: 1201px) {
+    footer {
+        width:100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 25px 40px;
+        font-size: 20px;
+    }
 }

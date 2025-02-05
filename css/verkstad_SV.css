@@ -147,7 +147,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 50px 0; /* För att ge utrymme ovanför varje verk-container */
+    margin: 50px 0; /* För att ge utrymme ovanför varje verk-container rör ej! */
     box-sizing: border-box;
     background-color: #f9f1e9bc;
     border-radius: 5px;
@@ -184,7 +184,7 @@ nav{
     box-sizing: border-box; 
     gap: 10px;
 }
-
+/*.Ed visar lilla fågeln".*/
 .left-Bild img {
     width: 100%; 
     height: auto; 
@@ -331,7 +331,7 @@ nav{
 
     .middle-text {
         padding: 0 5px; /* Justera textens padding för att få plats */
-        font-size: 14px; /* Minska textstorleken på mindre skärmar */
+        font-size: 16px; /* Minska textstorleken på mindre skärmar */
     }
     .left-Bild2 img {
         width: 100%; 
@@ -397,7 +397,7 @@ nav{
     
         /* Justering för mitten-texten */
         .middle-text {
-            font-size: 15px; 
+            font-size: 16px; 
             padding: 10px; 
             text-align: center; 
         }
@@ -420,10 +420,11 @@ nav{
     align-items: flex-start;
     width: 100%;
     margin-top: 50px;
+    gap:20px; /*...NYTT*/
 
 }
 
-.left-text3{
+.text-content3{
     flex: 1;
     width: 50%;
     height: auto;
@@ -436,14 +437,14 @@ nav{
     
 }
 
-.left-text3 p{
+.text-content3 p{
     font-family: 'CormorantUpright';
     font-weight: lighter;
     font-style: normal;
     font-size: 20px;
     color: rgb(102, 101, 101); /* Textfärg */
 }
-.left-text3 h2{
+.text-content3 h2{
     font-family: 'CormorantUpright';
     font-weight:bolder;
     font-style: normal;
@@ -451,20 +452,14 @@ nav{
     color: rgb(102, 101, 101); /* Textfärg */
 }
 
-.text-content3{
-    padding: 20px; 
-    overflow-wrap: break-word; 
-    word-wrap: break-word; /* Kompletterar overflow-wrap för äldre webbläsare */
-    overflow-y: auto; /* Scrollar om texten är för lång */
-}
-.right-Bild3{
+.left-Bild3{
     flex: 1;
-    width: 150px;
+    max-width: 50%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    flex-direction:row;
+    margin:50px auto;
+    gap:10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Lägg till en skugga */
     background-color: white; /* Bakgrundsfärg */
     overflow: hidden;
@@ -472,7 +467,8 @@ nav{
     border: 5px solid  #020e54; /* Lägg till en ram som ser ut som en tavelram */
     box-sizing: border-box;
 }
-.right-Bild3 img{
+
+.left-Bild3 img{
     max-width: 100%; /* För att göra bilden responsiv */
     height: auto;
     object-fit: cover;  
@@ -481,63 +477,126 @@ nav{
 
 }
 
-
-/* Media query för laptop-storlek : container TidningsContainer ....*/
-@media screen and (max-width: 1024px){
-    .verkstad-container3{
-        flex-direction: column; /* Lägg elementen i kolumn i stället för rad */
-        align-items: center;
-
-    }
-     
-    .left-text3 p{
-        width: 100%;
-        height: auto;
-        font-size: 14px; /* Minska textstorleken på mindre skärmar */
-
-    }
-    .left-text3 h2 {
-        font-size: 20px;/* Minska textstorleken på mindre skärmar */
-    }
-    
-    .right-Bild3{
-        width: 400px;/* original= 250px skärmar */
-        height: auto; /* Justera höjden= 400px*/
-    }
-        
-} 
-
-@media screen and (max-width: 600px){
-
-    .verkstad-container3{
-        margin-top:20px;
+@media screen and (max-width: 600px) {
+    .verkstad-container3 {
+        margin-top: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Gör layouten till en kolumn */
         align-items: center;
-        
+        padding:10px;
+        gap: 20px; 
     }
-    .right-Bild3{
-        width: 80%;
-        margin-top: 10px;
-        padding: 5px;
-    }
-    .right-Bild3 img {
-        max-width: 100%; /* Ser till att bilden aldrig överstiger sin container */
-        height: auto;
-    }
-    .left-text3{
+
+    .text-content3 {
         width: 90%;
+        margin: 5px 0; 
         padding: 10px;
+        text-align: center; /* Centrera texten för bättre läsbarhet */
     }
-    .left-text3 p {
+
+    .text-content3 h2 {
+        font-size: 24px;
+        margin-bottom: 10px; /* Skapar lite utrymme under rubriken */
+    }
+
+    .text-content3 p {
         font-size: 16px; /* Minska textstorleken på mindre skärmar */
     }
-       
-    .left-text3 h2 {
+
+    .left-Bild3{
+        max-width: 100%;
+        height: auto;
+        padding: 5px;
+        flex-direction: column;
+        margin: 20px 0;
+        gap: 5px;
+    }
+
+    .left-Bild3 img {
+        width: 100%; /* Se till att bilden aldrig överstiger sin container */
+        height: auto;
+    }
+    
+}
+
+/* Media Query: Tablet (601px - 1024px) */
+@media (max-width: 1024px) and (min-width: 601px) {
+    .verkstad-container3 {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+        padding:10px;
+        margin-top: 25px;
+    }
+
+    .left-Bild3{
+        max-width: 50%;
+        height: auto;
+        flex-direction: column;
+        gap: 5px;
+        margin: 20px 0; /* Minska avståndet på mindre skärmar */
+        padding: 10px;
+    }
+    .left-Bild3 img {
+        width: 100%; 
+        height: auto; 
+    }
+    .text-content3{
+        max-width: 90%;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .text-content3 p{
+        font-size: 16px;
+    }
+    .text-content3 h2{
+        font-size: 24px;
+    }
+
+}
+
+/* Media Query skärmar:1025px och 1440px */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .verkstad-container3 {
+        max-width: 1400px; 
+        margin: auto;
+        flex-direction: row;
+        align-items: flex-start;
+        
+    }
+
+    .text-content3 {
+        width: 55%;
+        align-items: center;
+        top:150px;
+    }
+    .text-content3 h2{
         font-size: 24px;
        
+
+    }
+    .text-content3 p{
+        font-size: 19px;
+        margin-bottom: 30px;
+    }
+
+    .left-Bild3 {
+        width: 45%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 100px;
+        overflow: hidden;
+    }
+    .left-Bild3 img {
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 }
+
 
 /*.Container4 Grytlappar......................................................*/
 .verkstad-container4{
@@ -732,6 +791,8 @@ footer{
     color:  #dcd9d9; 
     text-align: center;
     padding: 20px 0;
+    box-sizing: border-box;
+
 }
 footer a{
     color: #dcd9d9; 
@@ -740,6 +801,66 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
+}
+/*..Media Q för footer........................*/ 
+/* För mobil (upp till 480px) */
+@media (max-width: 480px) {
+    footer {
+        width:100%;
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+    footer p {
+        margin-bottom: 5px;
+    }
+    footer a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* För tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    footer {
+        width:100%;
+        padding: 18px 15px;
+        font-size: 16px;
+    }
+}
+
+/* För laptop (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    footer {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+    footer a {
+        color: #dcd9d9;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* mycket större skärmar (1201px och uppåt) */
+@media (min-width: 1201px) {
+    footer {
+        width:100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 25px 40px;
+        font-size: 20px;
+    }
+    footer a {
+        color: #dcd9d9;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
 }
 
 

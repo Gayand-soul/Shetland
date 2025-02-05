@@ -3,8 +3,7 @@
     box-sizing: border-box;
 }
 html, body {
-    place-items: center;
-    background: #eff4f457; /* Samma background som Workshop;*/
+    background: #778c8cf9; /* Samma background som Workshop;*/
 }
 @font-face {   /*....Cormora tror jag ok....*/
     font-family: 'CormorantUpright';
@@ -16,8 +15,11 @@ html, body {
 
 /*..FLAGS IN NAVBAR.....................*/
 .flag-container{
-    text-align: right;
-    margin-bottom: 10px;
+    position: absolute;
+    top:10px;
+    right:10px;
+    display: flex;
+    gap:10px;   
 
 }
 .flag-container a{
@@ -35,30 +37,33 @@ html, body {
     box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
     object-fit: cover;
 }
-
 /*..FLAGS IN NAVBAR ENDS HERE...................*/
 
 /*.NAVBAR STARTS HERE!!...............................................................*/
 nav{
     display:flex;
     padding:2% 6%;
-    justify-content: space-between;
     align-items: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
 }
 
 .nav-links{     /*....Navbar justeras...*/
-    flex:1;
+    flex-grow: 1;
     text-align: center;   
 
+}
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    padding: 0;
 }
 .nav-links ul li{ 
     font-family: 'CormorantUpright';
     font-weight:lighter;
     font-style: normal;
     list-style: none;
-    display: inline-block;
-    padding:8px 12px;
-    position: relative;
 }
 .nav-links ul li a{     /*....HOME,ABOUT font justeras...*/
     color: darkblue;     /*font färg för HOME, ABOUT #043308;*/
@@ -114,7 +119,8 @@ nav{
         left:-100%;
         text-align: center;
         transition:all .5s;
-        z-index: 10; /* navbar visas ovanför/framför Gallery*/
+        z-index: 10; /* navbar visas ovanför/framför Gallery----*/
+        display: block; /*förbannade Chrome:annars visas i linje*/
     }
     .nav-links ul li{
         display: block;/* nav bar becomes a block.*/
@@ -137,7 +143,7 @@ nav{
 }
 
 /* "Lidingö" SLIDE SHOW BEGINS HERE. .........................................*/
-/*..Slideshow container*/
+/*..Slideshow container1*/
 .slideshow-container1{
     max-width: 1300px;
     position: relative;
@@ -148,7 +154,7 @@ nav{
     z-index: 1; /* container visas bakom navbar.*/
     
 }
-/* 2 black and white slides*/
+
 .mySlides{
     display: none;
     height: 100%;  /*..Ny ändring: justera bildhöjden för att fylla slidern*/
@@ -215,6 +221,7 @@ nav{
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+   
 }
 .active, .dot:hover {
     background-color: #051087;
@@ -230,41 +237,70 @@ nav{
     to {opacity: 1}
 }
 
-/* Ny ändring: skapa avstånd under navbar */
-.slideshow-container {
-    margin-top: 60px; /* justera detta värde beroende på höjden av navbar!!Glöm ej!!! */
-}
-/* Media queries for larger screens */
-@media (min-width: 1200px) {
-     .slideshow-container {
-         height: 60vh; /* justeras höjden för större skärmar */ 
-        
-} 
-    .mySlides img { 
-    height: 100%; /* justeras bildhöjden för större skärmar */ 
-    width: 100%;
-    object-fit: cover;
-} 
-}
-@media (min-width:768px) and (max-width:1199px){
-    .slideshow-container{
-        height: 50vh;
+/* --- För Mobil (mindre än 600px) -MEDIA Q FÖR LIDINGÖ SLIDESHOW-- */
+@media (max-width: 599px) {
+    .slideshow-container1 {
+        max-width: 90%;
+        height: 300px;
+        border-width: 2px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* inget får sticka ut*/
     }
-    .mySlides img{
-        height: 100%;
+    .mySlides {
         width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .mySlides img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;/*..contain*/
+        display: block;
+    }
+    .text {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+/* --- För Tablet (600px - 1024px) --- */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .slideshow-container1 {
+        max-width: 80%;
+        height: 450px;
+    }
+    .mySlides img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
-}
-@media (max-width:767px){
-    .slideshow-container1 {
-        height: 40vh; /* Anpassa höjden för små skärmar */
+    .text {
+        font-size: 16px;
+        padding: 10px;
     }
-
-    .mySlides img {
-        height: 100%; 
-        width: 100%;  
-        object-fit: cover; 
+}
+/* --- För Laptop (1025px - 1440px) --- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .slideshow-container1 {
+        max-width: 85%;
+        height: 500px;
+        margin: 0 auto; /* försöker centrera här*/
+    }
+    .text {
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+/* --- För Stora skärmar (1441px och uppåt) --- */
+@media (min-width: 1441px) {
+    .slideshow-container1 {
+        max-width: 1300px;
+        height: 550px;
+    }
+    .text {
+        font-size: 20px;
+        padding: 14px;
     }
 }
 
@@ -286,7 +322,7 @@ nav{
     font-weight:lighter;
     font-style:normal;
     font-size: 20px;
-    color:  #6e6e6e; 
+    color:  #e1dfdf; 
     margin-bottom: 5px;
     display: flex;
     justify-content: center;
@@ -514,7 +550,7 @@ nav{
     font-size: 34px;
     margin-bottom: 20px;
     margin-top: 100px;
-    color:  #6e6e6e; 
+    color: #eff1f4;
     
 }
 .slideshow-books {
@@ -524,6 +560,9 @@ nav{
     margin: 20px 0 100px; /* Övre, vänster-höger och nedre marginal =margin: 100px 0 100px*/
     padding: 0 20px; /* Ger lite utrymme på vänster och höger sida */
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-width: 600px;
 }
 
 
@@ -541,11 +580,11 @@ nav{
     height: 10px;
 }
 .slideshow-books::-webkit-scrollbar-thumb{
-    background-color: #888;
+    background-color:#1c1a99;
     border-radius: 18px;
 }
 .slideshow-books::-webkit-scrollbar-thumb:hover{
-    background-color: #555;
+    background-color: #ededf3;
 }
 
 /* Responsiv design for Books slideshow*/
@@ -570,6 +609,7 @@ footer{
     color:  #dcd9d9; 
     text-align: center;
     padding: 20px 0;
+    box-sizing: border-box;
 }
 footer a{
     color: #dcd9d9; 
@@ -578,4 +618,48 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
+}
+/*..Media Q för footer........................*/ 
+/* För mobil (upp till 480px) */
+@media (max-width: 480px) {
+    footer {
+        width:100%;
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+    footer p {
+        margin-bottom: 5px;
+    }
+    footer a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* För tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    footer {
+        width:100%;
+        padding: 18px 15px;
+        font-size: 16px;
+    }
+}
+
+/* För laptop (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    footer {
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+}
+
+/* mycket större skärmar (1201px och uppåt) */
+@media (min-width: 1201px) {
+    footer {
+        width:100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 25px 40px;
+        font-size: 20px;
+    }
 }

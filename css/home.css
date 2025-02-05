@@ -307,25 +307,108 @@ nav{
     color: #dcd9d9; 
     
 }
-/*..Media qiery för Nyhets-container-----------------*/
-@media(max-width:768px){
-    .SenasteNytt-container{
+/* För mobil (upp till 480px).....MEDIA Q FÖR SENASTENYTT CONTAINER */
+@media (max-width: 480px) {
+    .SenasteNytt-container {
+        flex-direction: column; 
+        width: 100%;
         height: auto;
-        flex-direction: column;
         padding: 10px;
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-}
-@media(max-width:480px){    /*..NÖJD..*/
-    .SenasteNytt-container{
-        height: auto;
-        flex-direction: column;
-        padding: 5px;
         margin-top: 20px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+       
+    }
+    .senastenytt-content {
+        width: 90%;
+        padding: 0 20px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .senastenytt-content h3 {
+        font-size: 26px; 
+    }
+    .SenasteNytt-container h5 {
+        font-size: 22px;
+    }
+    .senastenytt-text {
+        font-size: 18px;
     }
 }
+
+/* För tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .SenasteNytt-container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    .senastenytt-content {
+        width: 90%;
+        margin-right: 0;
+    }
+    .senastenytt-content h3 {
+        font-size: 30px;
+    }
+    .SenasteNytt-container h5 {
+        font-size: 24px;
+    }
+    .senastenytt-text {
+        font-size: 19px;
+    }
+}
+
+/* För laptop (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .SenasteNytt-container {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .senastenytt-content {
+        width: 60%;
+        margin-right: 20px;
+    }
+    .senastenytt-content h3 {
+        font-size: 34px;
+    }
+    .SenasteNytt-container h5 {
+        font-size: 26px;
+    }
+    .senastenytt-text {
+        font-size: 20px;
+    }
+}
+
+/* större skärmar (1201px och uppåt) */
+@media (min-width: 1201px) {
+    .SenasteNytt-container {
+        width: 100%;
+        margin-bottom: 50px;
+        padding: 30px 20px;
+        height: auto;
+    }
+    .senastenytt-content {
+        width: 70%;
+        margin-right: 30px;
+    }
+    .senastenytt-content h3 {
+        font-size: 38px;
+    }
+    .SenasteNytt-container h5 {
+        font-size: 28px;
+    }
+    .senastenytt-text {
+        font-size: 21px;
+    }
+}
+
+
 
 /*.VIDEO CONTAINER MED VIDEO.....................................*/
 .video-container{
@@ -344,7 +427,7 @@ nav{
     gap: 20px;
 }
 .video-container video{
-    width: 50%;
+    width: 45%; 
     height: 100%;
     flex-direction: column;
     border-radius: 10px;
@@ -360,29 +443,79 @@ nav{
     color:  #dcd9d9; 
 
 }
-
-/*.Meida för VIDEO.....................................*/
-@media (max-width:768px){ /*..för mindre skärm= Tablet..*/
-    .video-container{
-        flex-direction: column; /*..video visas en efter en*/
-        height: auto; /*..justera video lämplig höjd*/
+/* För mobil (upp till 480px).....VIDEO MEDIA Q */
+@media (max-width: 480px) {
+    .video-container {
+        flex-direction: column; /* Staplar videorna vertikalt */
+        height: auto;
+        padding: 10px;
     }
-    .video-container video{
-        width: 100%; /* visar fullwidth för varje video*/
+    .video-container video {
+        width: 100%; /* Full bredd */
         height: auto;
     }
-
+    .video-container h3 {
+        font-size: 24px; /* Mindre textstorlek */
+        margin-bottom: 10px;
+    }
 }
-@media (max-width:480px){
-    .video-container{
+
+/* För tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .video-container {
         flex-direction: column;
         height: auto;
+        padding: 15px;
     }
-    .video-container video{
-        width: 100%;
+    .video-container video {
+        width: 90%; 
         height: auto;
     }
+    .video-container h3 {
+        font-size: 26px;
+    }
 }
+
+/* För laptop (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .video-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: auto; 
+        padding: 10px;
+    }
+    .video-container video {
+        width: 40%; /*.max-width: 48%.*/
+        height: auto;
+        margin-right: 10px;
+    }
+    .video-container h3 {
+        font-size: 20px;
+        text-align:left;
+    }
+}
+
+/* mycket större skärmar (1201px och uppåt) */
+@media (min-width: 1201px) {
+    .video-container {
+        width: 100%; 
+        margin: 0 auto;
+        margin-bottom: 50px;
+        height: 600px;
+        padding: 30px;
+    }
+    .video-container video {
+        max-width: 42%; /* undvik:videorna faller utanför container*/
+        height: 100%;
+        margin-right: 10px;
+    }
+    .video-container h3 {
+        font-size: 30px;
+    }
+}
+
 
 /*  FOOTER SECTION...............*/
 footer{
@@ -391,6 +524,7 @@ footer{
     color:  #dcd9d9; 
     text-align: center;
     padding: 20px 0;
+    box-sizing: border-box;
 }
 footer a{
     color: #dcd9d9; 
@@ -399,4 +533,75 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
+}
+/*..Media Q för footer........................*/ 
+/* För mobil (upp till 480px) */
+@media (max-width: 480px) {
+    footer {
+        width:100%;
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+    footer p {
+        margin-bottom: 5px;
+    }
+    footer a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* För tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    footer {
+        width:100%;
+        margin: 0 auto;
+        padding: 18px 15px;
+        font-size: 16px;
+    }
+    footer a {
+        color: #dcd9d9;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* För laptop (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    footer {
+        width:100%;
+        margin: 0 auto;
+        padding: 20px 30px;
+        font-size: 18px;
+    }
+    footer a {
+        color: #dcd9d9;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* mycket större skärmar (1201px och uppåt) */
+@media (min-width: 1201px) {
+    footer {
+        width:100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 25px 40px;
+        font-size: 20px;
+    }
+    footer a {
+        color: #dcd9d9;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
 }
