@@ -4,6 +4,7 @@ Welcome to the Shetland website! This site is dedicated to the breathtaking land
 Explore Shetland
 Stunning coastal views and wildlife 
 Local traditions, music, and crafts 
+
 📚 Featured Books
 Discover a collection of books about Shetland's history, folklore, and nature – perfect for enthusiasts and travelers alike.
 
